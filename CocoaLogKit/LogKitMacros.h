@@ -26,7 +26,7 @@
 #ifdef DEBUG
     static const int ddLogLevel = DDLogLevelVerbose;
 #else
-    static const int ddLogLevel = DDLogLevelError;
+    static const int ddLogLevel = DDLogLevelInfo;
 #endif
 
 #define DLOG_VERBOSE_COLOR [DDColor colorWithRed:0.65 green:0.65 blue:0.65 alpha:1.0]
@@ -35,17 +35,17 @@
 #define DLOG_WARNING_COLOR [DDColor colorWithRed:244.0/255.0 green:103.0/255.0 blue:8.0/255.0 alpha:1.0]
 #define DLOG_ERROR_COLOR [DDColor redColor]
 
-#define DLogError(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
-#define DLogWarn(frmt, ...)     LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagWarning, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
-#define DLogInfo(frmt, ...)     LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagInfo,    0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
-#define DLogDebug(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagDebug,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
-#define DLogVerbose(frmt, ...)  LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagVerbose, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+#define logE(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+#define logW(frmt, ...)     LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagWarning, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+#define logI(frmt, ...)     LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagInfo,    0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+#define logD(frmt, ...)    LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagDebug,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+#define logV(frmt, ...)  LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagVerbose, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 
-#define DLogTrace()            DLogDebug(@"%s", __PRETTY_FUNCTION__)
+#define DLogTrace()            logD(@"%s", __PRETTY_FUNCTION__)
 
 #define DAssert(condition, frmt, ...) if (!(condition)) {     \
                                         NSString *description = [NSString stringWithFormat:frmt, ##__VA_ARGS__]; \
-                                        DLogError(@"%@", description);                                          \
+                                        logE(@"%@", description);                                          \
                                         NSAssert(NO, description);}
 
 #define DAssertCondition(condition) DDAssert(condition, @"Condition not satisfied: %s", #condition)

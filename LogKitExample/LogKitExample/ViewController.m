@@ -28,23 +28,23 @@
     
     switch (randomLevel) {
         case 4:
-            DLogError(@"this is a test error log message");
+            logE(@"this is a test error log message");
             break;
             
         case 3:
-            DLogWarn(@"this is a test warn log message");
+            logW(@"this is a test warn log message");
             break;
             
         case 2:
-            DLogInfo(@"this is a test info log message");
+            logI(@"this is a test info log message");
             break;
             
         case 1:
-            DLogDebug(@"this is a test debug log message");
+            logD(@"this is a test debug log message");
             break;
             
         default:
-            DLogVerbose(@"this is a test verbose log message");
+            logV(@"this is a test verbose log message");
             break;
     }
     

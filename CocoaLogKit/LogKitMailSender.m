@@ -66,7 +66,7 @@
         case MFMailComposeResultFailed: message = @"User attempts to save or send log file failed."; break;
         default: break;
     }
-    DLogInfo(@"%@", [NSBundle log_localizedStringForKey:message]);
+    logI(@"%@", [NSBundle log_localizedStringForKey:message]);
     self.completeAction(controller, result, error);
     self.keepInMemory = nil;
     [controller dismissViewControllerAnimated:YES completion:nil];

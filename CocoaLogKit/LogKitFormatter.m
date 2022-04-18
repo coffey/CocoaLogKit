@@ -31,7 +31,7 @@
 
 #pragma mark - Public Methods
 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage {
-    return [NSString stringWithFormat:@"%@ %@[%@] %@ %@:%@ %@",
+    return [NSString stringWithFormat:@"%@ %@[%@] %@ %@:%@ >>>> %@ \n",
             [self.dateFormatter stringFromDate:logMessage.timestamp],
             self.processName,
             [self queueThreadLabelForLogMessage:logMessage],

@@ -1,0 +1,22 @@
+PODS:
+  - CocoaLumberjack (3.7.4):
+    - CocoaLumberjack/Core (= 3.7.4)
+  - CocoaLumberjack/Core (3.7.4)
+  - SSZipArchive (2.4.3)
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - SSZipArchive
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+
+PODFILE CHECKSUM: 2ba9c8e13d52d2a4346d568f8fdf6f27274b7f8e
+
+COCOAPODS: 1.11.2

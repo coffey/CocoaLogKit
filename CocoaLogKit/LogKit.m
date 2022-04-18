@@ -166,9 +166,9 @@ static NSString *_defaultLogPassword;
     }
     
     if (success) {
-        DLogInfo(@"%@", [NSBundle log_localizedStringForKey:@"LogFile Compression Successed"]);
+        logI(@"%@", [NSBundle log_localizedStringForKey:@"LogFile Compression Successed"]);
     } else {
-        DLogError(@"%@", [NSBundle log_localizedStringForKey:@"LogFile Compression Failed"]);
+        logE(@"%@", [NSBundle log_localizedStringForKey:@"LogFile Compression Failed"]);
     }
     
     Class mailClass = NSClassFromString((@"MFMailComposeViewController"));
@@ -177,7 +177,7 @@ static NSString *_defaultLogPassword;
 #ifdef DEBUG
         DAssert(mailClass, @"%@", [NSBundle log_localizedStringForKey:@"Sending mail within the application is not supported in the current system version"]);
 #endif
-        DLogError(@"%@", [NSBundle log_localizedStringForKey:@"Sending mail within the application is not supported in the current system version"]);
+        logE(@"%@", [NSBundle log_localizedStringForKey:@"Sending mail within the application is not supported in the current system version"]);
         return;
     }
     
@@ -185,7 +185,7 @@ static NSString *_defaultLogPassword;
 #ifdef DEBUG
         DAssert([mailClass canSendMail], @"%@", [NSBundle log_localizedStringForKey:@"The current user did not set up an email account"]);
 #endif
-        DLogError(@"%@", [NSBundle log_localizedStringForKey:@"The current user did not set up an email account"]);
+        logE(@"%@", [NSBundle log_localizedStringForKey:@"The current user did not set up an email account"]);
         return;
     }
     

@@ -52,6 +52,8 @@
 */
 + (void)addFileLogger;
 
++ (NSString *)logDirectory;
+
 ///-------------------------
 #pragma mark - Mail 
 ///-------------------------
